@@ -1,0 +1,21 @@
+<html>
+
+<style> circle {fill: lightblue; stroke: black;} </style>
+<body onload='init()'>
+<svg width=300 height=300>
+</svg>
+<script>
+async function init() {
+const data= await d3.csv('Users/no-face/Downloads/pizza/pizzadata.csv');
+var xs = d3.scaleLinear().domain([18.411826, 64.85437]).range([-100, 100]);
+var ys = d3.scaleLinear().domain([-157.8374614, -66.024871]).range([-100, 100]);
+
+d3.select("svg").append("g").attr("transform", 'translate(50,50)')
+.selectAll("circle").data(data).enter().append("circle").attr("r", 2)
+.attr("cx", function(d,i) {return xs(d.latitude);} )
+.attr("cy", function(d,i) {return ys(d.longitude); });
+
+}
+</script>
+</body>
+</html>
