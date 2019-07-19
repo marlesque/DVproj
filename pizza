@@ -6,7 +6,7 @@
 </svg>
 <script>
 async function init() {
-const data= await d3.csv('Users/no-face/Downloads/pizza/pizzadata.csv');
+const data= await d3.csv('pizzadata.csv');
 var xs = d3.scaleLinear().domain([18.411826, 64.85437]).range([-100, 100]);
 var ys = d3.scaleLinear().domain([-157.8374614, -66.024871]).range([-100, 100]);
 
